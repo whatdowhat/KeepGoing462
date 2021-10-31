@@ -1,0 +1,7 @@
+﻿@if (Request.Url.LocalPath == "/Migration/Index" || Request.Url.LocalPath == "/Migration")
+{
+}
+@if (!(Request.Url.LocalPath == "/Migration/Index" || Request.Url.LocalPath == "/Migration"))
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}

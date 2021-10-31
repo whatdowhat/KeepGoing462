@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @{
+        ViewBag.Title = "Migration";
+        var urlString = Request.Url.LocalPath;
+    }
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+    
+    <script>
+        $(function () {
+            //alert("test");
+        })
+        function GetMessage() {
+            $.get("/Migration/GetMessage", function (data) {
+                $("p").html(data);
+            });
+        }
+
+    </script>
+
+    <h1>@urlString</h1>
+    <button class="btn-danger" onclick="GetMessage()"> Migration Run </button>
+    <p></p>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
